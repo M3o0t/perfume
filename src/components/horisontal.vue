@@ -40,7 +40,7 @@ const scrollRight = () => {
   overflow-x: auto;
   scroll-behavior: smooth;
   gap: 16px;
-  width: 640px;
+  width: 800px;
   padding: 20px;
   background: rgba(255, 255, 255, 0.8);
 }
