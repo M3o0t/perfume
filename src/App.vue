@@ -1,8 +1,6 @@
 <template>
     <Navbar/>
-    <router-view />
-    <img src="/public/images/10.jpg" alt="test image" />
-    
+    <router-view /> 
 </template>
 
 <script setup>
