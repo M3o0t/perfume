@@ -1,23 +1,23 @@
 <template>
     <div class="container">
+
         <div class="product" v-for="perfume in perfumes" :key="perfume.id">
-
-            <img :src="perfume.link" alt="error with image">
-           
-
-            <div class="details">
+          <router-link :to="`/products/${perfume.id}`">
+             <img :src="perfume.link" alt="error with image">
+             <div class="details">
                 <h3 class="name">{{ perfume.name }}</h3>
                 <h4 class="salary">₹ {{ perfume.salary }}</h4>
-            </div>
-
-            <div class="buy">
+             </div>
+             <div class="buy">
                 <button class="btn buying">buy</button>
-                <button @click="cart.add(perfume)" class="btn cart">add to cart</button>
-            </div>
-            
+                <button @click.prevent="cart.add(perfume)" class="btn cart">add to cart</button>
+             </div>
+          </router-link>
         </div>
     </div>
+
     <div class="hr-gallery">
+
     <Horisontal />
     </div>
 </template>
@@ -39,8 +39,13 @@ const cart = store();
     margin-top: 10px
 }
 .buy .btn{
+    width: 40%;
+    font-size: 15px;
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif;
     margin: 10px;
-    border-radius: 8px;
+    border-radius: 19px;
+    background-color:rgb(70, 241, 170);
 }
 img{
     width: 100%;
@@ -60,8 +65,7 @@ img{
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 .product:hover {
-    animation: float 3s ease-in-out infinite;
-
+  animation: float 3s ease-in-out infinite;
   transform: scale(1.03);
   box-shadow: 10px 8px 8px 1px  rgba(30, 31, 30, 0.2);
 }
