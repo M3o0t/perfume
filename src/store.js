@@ -1,3 +1,4 @@
+// store.js
 import { defineStore } from "pinia";
 
 export const store = defineStore('store', {
@@ -7,11 +8,14 @@ export const store = defineStore('store', {
   actions: {
     add(item) {
       this.cart.push(item)
+    },
+    remove(item) {
+      this.cart = this.cart.filter(i => i.id !== item.id);
     }
   },
   getters: {
-    totalSalary: (state) => {
-      return state.cart.reduce((sum, item) => sum + item.salary , 0);
+    totalprise: (state) => {
+      return state.cart.reduce((sum, item) => sum + item.prise , 0);
     }
   }
 })

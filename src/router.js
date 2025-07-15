@@ -1,4 +1,4 @@
-
+// router.js
 import { createWebHistory , createRouter } from "vue-router";
 
 import Home from "./components/home.vue";
@@ -7,6 +7,7 @@ import product from "./components/product.vue";
 const router = createRouter({
     history: createWebHistory(),
     routes : [
+        { path: '/', redirect: '/products' },
         {path : '/products' , component : Home } ,
         {path : '/products/:id',component : product},
         {path : '/cart' , component : Cart }
@@ -14,3 +15,14 @@ const router = createRouter({
 })
 
 export default router
+
+
+// // router.js
+// const router = createRouter({
+//   history: createWebHistory(),
+//   routes: [
+//     { path: '/products', component: Home },
+//     { path: '/products/:id', component: product },
+//     { path: '/cart', component: Cart }
+//   ]
+// });

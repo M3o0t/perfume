@@ -1,3 +1,4 @@
+// bus.js
 const array = new Map();
 
 export default{

@@ -1,3 +1,4 @@
+<!-- navbar.vue -->
 <template>
     <div class="nav">
         <nav>
