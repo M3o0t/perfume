@@ -15,7 +15,7 @@
               <img :src="item.link" :alt="item.name" class="cart-item-image">
               <div class="details">
                 <h3 class="name">{{ item.name }}</h3>
-                <h4 class="price">₹ {{ item.prise }}</h4>
+                <h4 class="price">₹ {{ item.price }}</h4>
               </div>
               <div class="actions">
                 <button class="btn buying">Buy Now</button>
@@ -28,7 +28,7 @@
         <div class="cart-summary">
           <div class="cart-det">
             <h4>{{ cart.cart.length }} {{ cart.cart.length === 1 ? 'item' : 'items' }}</h4>
-            <h4>Total: ₹{{ cart.totalprise }}</h4>
+            <h4>Total: ₹{{ cart.totalprice }}</h4>
           </div>
           <button class="checkout-btn">Proceed to Checkout</button>
         </div>

@@ -14,8 +14,8 @@ export const store = defineStore('store', {
     }
   },
   getters: {
-    totalprise: (state) => {
-      return state.cart.reduce((sum, item) => sum + item.prise , 0);
+    totalprice: (state) => {
+      return state.cart.reduce((sum, item) => sum + item.price , 0);
     }
   }
 })

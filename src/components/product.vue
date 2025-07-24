@@ -6,7 +6,7 @@
           <img :src="perfume.link" :alt="perfume.name" class="product-image">
           <div class="details">
             <h3 class="name">{{ perfume.name }}</h3>
-            <h4 class="price">₹ {{ perfume.prise }}</h4>
+            <h4 class="price">₹ {{ perfume.price }}</h4>
             <p class="description" v-if="perfume.description">{{ perfume.description }}</p>
           </div>
           <div class="buy">
@@ -33,7 +33,8 @@
           const perfume = perfumes.find(p => p.id === id);
 
           if (!perfume) {
-            router.push('/products'); // إعادة التوجيه لو ما لقى المنتج
+            //redirecte if the product is not exist 
+            router.push('/products');
           }
 
           return { perfume, cart };

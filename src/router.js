@@ -17,12 +17,3 @@ const router = createRouter({
 export default router
 
 
-// // router.js
-// const router = createRouter({
-//   history: createWebHistory(),
-//   routes: [
-//     { path: '/products', component: Home },
-//     { path: '/products/:id', component: product },
-//     { path: '/cart', component: Cart }
-//   ]
-// });

@@ -9,12 +9,12 @@
                 <img :src="perfume.link" :alt="perfume.name" class="product-image">
                 <div class="details">
                     <h3 class="name">{{ perfume.name }}</h3>
-                    <h4 class="price">₹ {{ perfume.prise }}</h4>
+                    <h4 class="price">₹ {{ perfume.price }}</h4>
                 </div>
             </router-link>
 
             <div class="buy">
-                <button class="btn buying">Buy Now</button>
+                <button class="btn buying" @click="scrollLeft">Buy Now</button>
                 <button @click.prevent="cart.add(perfume)" class="btn cart">Add to Cart</button>
             </div>
 
@@ -29,9 +29,17 @@
 </template>
 
 <script setup>
+import {ref} from 'vue'
 import { store } from '@/store';
 import horizontal from './horizontal.vue';
 import { perfumes } from '@/perfumes';
+
+const scrollGallery = ref(null);
+
+const scrollLeft = () => {
+  scrollGallery.value.scrollBy({ left: -200, behavior: 'smooth' });
+};
+
 
 const cart = store();
 </script>
