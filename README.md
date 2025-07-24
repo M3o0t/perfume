@@ -25,6 +25,6 @@ A simple Vue.js project for a perfume shop with product listing, product details
 
 bash
 git clone https://github.com/m3o0t/perfume.git
-cd perfume
-npm install
-npm run dev
+- cd perfume
+- npm install
+- npm run dev
