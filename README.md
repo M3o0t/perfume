@@ -4,7 +4,7 @@ A simple Vue.js project for a perfume shop with product listing, product details
 
 ## 🚀 Demo
 
-🔗 [Live Preview](https://yourusername.github.io/perfume/)
+🔗 [Live Preview](https://m3o0t.github.io/perfume/)
 
 
 ## 🛠️ Features
