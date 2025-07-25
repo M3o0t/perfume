@@ -18,6 +18,8 @@
                 <h4 class="price">₹ {{ item.price }}</h4>
               </div>
               <div class="actions">
+                <button @click.prevent="increacequantity(item)">increace</button>
+                <p >{{ item.quantity  }}</p>
                 <button class="btn buying">Buy Now</button>
                 <button type="button" @click.prevent="remove(item)" class="btn remove">Remove</button>
               </div>
@@ -38,16 +40,23 @@
 
   <script>
     import { store } from '@/store';
+// import vueConfig from 'vue.config';
 
     export default {
     setup() {
     const cart = store(); // ✅ Moved into setup
-
     const remove = (item) => {
       cart.remove(item);
     };
 
-    return { cart, remove };
+    const increacequantity = (item) =>{
+      
+      item.quantity++
+      
+    };
+
+
+    return { cart, remove ,increacequantity  };
   }
 }
 </script>

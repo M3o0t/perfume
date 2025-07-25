@@ -7,15 +7,30 @@ export const store = defineStore('store', {
   }),
   actions: {
     add(item) {
-      this.cart.push(item)
+      const itemexist = this.cart.find(p => p.id == item.id)
+      if(itemexist){
+        itemexist.quantity++
+      }
+      else{
+        this.cart.push(item)
+      }
     },
+
     remove(item) {
-      this.cart = this.cart.filter(i => i.id !== item.id);
-    }
-  },
+      const itemexist = this.cart.find(p => p.id == item.id)
+      if(itemexist){
+        if(itemexist.quantity > 1){
+           itemexist.quantity--
+        }
+        else{
+           this.cart = this.cart.filter(i => i.id !== itemexist.id)
+        }
+      }
+    }},
+
   getters: {
     totalprice: (state) => {
-      return state.cart.reduce((sum, item) => sum + item.price , 0);
+      return state.cart.reduce((sum, item) => sum + item.price * item.quantity , 0);
     }
   }
 })
