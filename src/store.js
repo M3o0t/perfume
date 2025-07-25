@@ -3,7 +3,7 @@ import { defineStore } from "pinia";
 
 export const store = defineStore('store', {
   state: () => ({
-     cart : []
+     cart : JSON.parse(localStorage.getItem('cart')) || []
   }),
   actions: {
     fetchcart(){
@@ -12,7 +12,7 @@ export const store = defineStore('store', {
         this.cart = JSON.parse(saved)
       }
     },
-    
+
     add(item) {
       const itemexist = this.cart.find(p => p.id == item.id)
       if(itemexist){
