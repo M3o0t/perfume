@@ -18,8 +18,9 @@
                 <h4 class="price">₹ {{ item.price }}</h4>
               </div>
               <div class="actions">
-                <button @click.prevent="increacequantity(item)">increace</button>
+                <button class="increace quantity" @click.prevent="increaseQuantity(item)">increace</button>
                 <p >{{ item.quantity  }}</p>
+                <button @click.prevent="dicreacequantity(item)" class="dicreace guantity">-</button>
                 <button class="btn buying">Buy Now</button>
                 <button type="button" @click.prevent="remove(item)" class="btn remove">Remove</button>
               </div>
@@ -40,6 +41,7 @@
 
   <script>
     import { store } from '@/store';
+import { onMounted } from 'vue';
 // import vueConfig from 'vue.config';
 
     export default {
@@ -48,15 +50,30 @@
     const remove = (item) => {
       cart.remove(item);
     };
-
-    const increacequantity = (item) =>{
+   onMounted(()=>{
+    cart.fetchcart()
+   })
+    const increaseQuantity = (item) =>{
       
       item.quantity++
+      cart.updatecart()
       
     };
 
+     
+    const dicreacequantity = (item) =>{
+    const itemexist = cart.cart.find(p => p.id === item.id)
+    if(itemexist.quantity > 1){
+      itemexist.quantity--
+    }else{
+      remove(itemexist)
+    }
+    cart.updatecart()
+  }
+  
 
-    return { cart, remove ,increacequantity  };
+
+    return { cart, remove ,increaseQuantity , dicreacequantity  };
   }
 }
 </script>
@@ -199,5 +216,8 @@
   
   .checkout-btn:hover {
     background-color: #21867a;
+  }
+  .quantity{
+    border-radius: 50%;
   }
   </style>

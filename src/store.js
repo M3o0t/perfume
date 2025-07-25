@@ -6,6 +6,13 @@ export const store = defineStore('store', {
      cart : []
   }),
   actions: {
+    fetchcart(){
+      const saved = localStorage.getItem('cart')
+      if(saved){
+        this.cart = JSON.parse(saved)
+      }
+    },
+    
     add(item) {
       const itemexist = this.cart.find(p => p.id == item.id)
       if(itemexist){
@@ -14,21 +21,21 @@ export const store = defineStore('store', {
       else{
         this.cart.push(item)
       }
+      this.updatecart()
     },
 
     remove(item) {
-      const itemexist = this.cart.find(p => p.id == item.id)
-      if(itemexist){
-        if(itemexist.quantity > 1){
-           itemexist.quantity--
-        }
-        else{
-           this.cart = this.cart.filter(i => i.id !== itemexist.id)
-        }
+           this.cart = this.cart.filter(i => i.id !== item.id)
+           this.updatecart()
+
+      },
+      updatecart(){
+        localStorage.setItem('cart' , JSON.stringify(this.cart))
       }
-    }},
+ },
 
   getters: {
+
     totalprice: (state) => {
       return state.cart.reduce((sum, item) => sum + item.price * item.quantity , 0);
     }
