@@ -10,7 +10,7 @@
       
       <form v-else action="">
         <ul class="cart-items">
-          <li v-for="item in cart.cart" :key="item.id" class="cart-item">
+          <li v-for="item in cart.cart" :key="item.id" class="cart-item" >
             <div class="cart-cont">
               <img :src="item.link" :alt="item.name" class="cart-item-image">
               <div class="details">
@@ -18,10 +18,12 @@
                 <h4 class="price">₹ {{ item.price }}</h4>
               </div>
               <div class="actions">
-                <button class="increace quantity" @click.prevent="increaseQuantity(item)">increace</button>
-                <p >{{ item.quantity  }}</p>
-                <button @click.prevent="dicreacequantity(item)" class="dicreace guantity">-</button>
-                <button class="btn buying">Buy Now</button>
+                <div class="quantity" >
+                  <button class="increace quantitybtn" @click.prevent="increaseQuantity(item)">+</button>
+                  <input  class="input-box"  v-model="item.quantity" ></input>
+                  <button @click.prevent="dicreacequantity(item)" class="dicreace quantitybtn">-</button>
+                </div>
+                 <button class="btn buying">Buy Now</button>
                 <button type="button" @click.prevent="remove(item)" class="btn remove">Remove</button>
               </div>
             </div>
@@ -167,12 +169,12 @@ import { onMounted } from 'vue';
   }
   
   .buying {
-    background-color: #e63946;
+    background-color: #17d130;
     color: white;
   }
   
   .buying:hover {
-    background-color: #c1121f;
+    background-color: #32b40a;
   }
   
   .remove {
@@ -181,7 +183,7 @@ import { onMounted } from 'vue';
   }
   
   .remove:hover {
-    background-color: #e9ecef;
+    background-color: #f80404;
   }
   
   .cart-summary {
@@ -215,9 +217,32 @@ import { onMounted } from 'vue';
   }
   
   .checkout-btn:hover {
-    background-color: #21867a;
+    font-size: 1.2rem;
   }
-  .quantity{
-    border-radius: 50%;
-  }
+ 
+  .quantity button {
+  background-color: #3498db;
+  border-radius: 40%;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  width: 35px;
+  height: 100%;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+.quantity button:hover {
+  background-color: #2980b9;
+}
+
+.input-box {
+  width: 40px;
+  text-align: center;
+  border: none;
+  padding: 8px 10px;
+  font-size: 16px;
+  outline: none;
+}
   </style>
