@@ -3,7 +3,7 @@
     <div class="nav">
         <nav>
             <ul>
-                <li><router-link to="/products" >home</router-link></li>
+                <li><router-link to="/perfume/" >home</router-link></li>
                 <li><router-link  to="/cart">cart</router-link></li>
             </ul>
         </nav>

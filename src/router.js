@@ -7,8 +7,7 @@ import product from "./components/product.vue";
 const router = createRouter({
     history: createWebHistory(),
     routes : [
-        { path: '/', redirect: '/products' },
-        {path : '/products' , component : Home } ,
+        {path : '/perfume/' , component : Home},
         {path : '/products/:id',component : product},
         {path : '/cart' , component : Cart }
         ]
