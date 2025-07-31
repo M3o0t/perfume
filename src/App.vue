@@ -20,9 +20,10 @@ import Navbar from './components/navbar.vue'
   <style scoped>
   .app-container {
     font-family: 'Arial', sans-serif;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 20px;
+    margin-top:0;
+    padding: 0 0px;
   }
  
   </style>
