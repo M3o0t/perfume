@@ -98,7 +98,7 @@ export default {
   
   .price {
     font-size: 1.5rem;
-    color: #e63946;
+    color: gold;
     margin: 0 0 20px;
   }
   

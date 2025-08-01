@@ -7,13 +7,13 @@
           
             <router-link :to="`/products/${perfume.id}`" class="product-link">
                 <img :src="perfume.link" :alt="perfume.name" class="product-image">
-                <div class="details">
+                <div class="details itemdetails">
                     <h3 class="name">{{ perfume.name }}</h3>
                     <h4 class="price">₹ {{ perfume.price }}</h4>
                 </div>
             </router-link>
 
-            <div class="buy">
+            <div class="buy itemdetails">
                 <button class="btn buying" >Buy Now</button>
                 <button @click.prevent="cart.add(perfume)" class="btn cart">Add to Cart</button>
             </div>
@@ -49,6 +49,9 @@ const cart = store();
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 30px;
   padding: 20px 0;
+}
+.itemdetails{
+  background-color: gray;
 }
 
 .product {
@@ -87,7 +90,7 @@ const cart = store();
 
 .price {
   margin: 0;
-  color: #e63946;
+  color: gold;
   font-weight: bold;
 }
 

@@ -2,10 +2,14 @@
 <template>
     <div class="nav">
         <nav>
-            <ul>
-                <li><router-link to="/perfume/" >home</router-link></li>
-                <li><router-link  to="/cart">cart</router-link></li>
-            </ul>
+            <div class="content">
+                
+                <ul>
+                    <li><router-link to="/perfume/" >home</router-link></li>
+                    <li><router-link  to="/cart">cart</router-link></li>
+               </ul>
+            </div>
+            
         </nav>
     </div>
 </template>
@@ -19,9 +23,10 @@ nav ul{
     display: flex;
     margin:0;
     justify-content: space-evenly;
-    padding:20px 0 0 0  ;
+    padding:10px 0 10px 0  ;
     width: 100%;
-    border-radius: 8px
+    border-radius: 8px;
+    background-color: skyblue;
 }
 ul li{
     padding: 10px;
