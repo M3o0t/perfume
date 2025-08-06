@@ -26,7 +26,7 @@ nav ul{
     padding:10px 0 10px 0  ;
     width: 100%;
     border-radius: 8px;
-    background-color: skyblue;
+    background-color: rgb(215, 221, 223);
 }
 ul li{
     padding: 10px;
@@ -34,6 +34,12 @@ ul li{
 }
 ul li a{
     text-decoration: none;
+    color: white;
     font-size: 1.5rem;
+}
+ul li:hover{
+    background-color: skyblue ;
+    border-radius: 10px;
+
 }
 </style>
