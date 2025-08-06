@@ -5,7 +5,7 @@
       
       <div v-if="cart.cart.length === 0" class="empty-cart">
         <p>Your cart is currently empty</p>
-        <router-link to="/" class="continue-shopping">Continue Shopping</router-link>
+        <router-link to="/perfume/" class="continue-shopping">Continue Shopping</router-link>
       </div>
       
       <form v-else action="">
