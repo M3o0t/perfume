@@ -5,8 +5,8 @@
             <div class="content">
                 
                 <ul>
-                    <li><router-link to="/perfume/" >home</router-link></li>
-                    <li><router-link  to="/cart">cart</router-link></li>
+                    <li><router-link class="link" to="/perfume/" >home</router-link></li>
+                    <li><router-link  to="/cart" class="link">cart</router-link></li>
                </ul>
             </div>
             
@@ -15,31 +15,53 @@
 </template>
 
 
-<style>
-.nav{
-    width: 100%;
-}
-nav ul{
-    display: flex;
-    margin:0;
-    justify-content: space-evenly;
-    padding:10px 0 10px 0  ;
-    width: 100%;
-    border-radius: 8px;
-    background-color: rgb(215, 221, 223);
-}
-ul li{
-    padding: 10px;
-    list-style: none;
-}
-ul li a{
-    text-decoration: none;
-    color: white;
-    font-size: 1.5rem;
-}
-ul li:hover{
-    background-color: skyblue ;
-    border-radius: 10px;
 
+<style scoped>
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: #2c3e50;
+  opacity: 0.9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+  padding: 12px 0;
+  list-style: none;
+}
+
+ul li a {
+  display: inline-block;
+  min-width: 90px;
+  text-align: center;
+  padding: 10px 16px;
+  color: #f0f0f0;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+ul li a:hover {
+  background-color: #1abc9c;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.router-link-active {
+  background-color: #1abc9c;
+  color: #fff;
 }
 </style>

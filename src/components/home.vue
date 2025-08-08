@@ -107,26 +107,33 @@ const cart = store();
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
+/* BUYING BUTTON */
 .buying {
-  background-color: #e63946;
+  background-color: #42be11;
   color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .buying:hover {
-  background-color: #c1121f;
+  background-color: #5bd62b;
 }
 
+/* CART BUTTON */
 .cart {
-  background-color: #f8f9fa;
-  border: 1px solid #dee2e6;
+  background-color: #ff7f50;
+  color: white;
+  /* No border to match .buying */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .cart:hover {
-  background-color: #e9ecef;
+  background-color: #ff5722;
+  transform: scale(1.02); /* Optional: slight zoom on hover */
 }
+
 
 .hr-gallery {
   margin-top: 40px;
